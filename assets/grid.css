@@ -25,6 +25,9 @@
     background-color: var(--backbgroundrow);
     border-bottom: var(--borderrowbody);
 }
+.grid__row__body:hover{
+  background-color: var(--backbgroundrowhover);
+}
 .grid__column{
     margin-left: var(--marginleftcolumn);
 }
