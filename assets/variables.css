@@ -1,0 +1,10 @@
+:root {
+    --colortext:#3f3f3f;
+    --backgroundheader: #cbd4da;
+    --backgroundselectedrow: #f7f8f9;
+    --backbgroundrow: #ffffff;
+    --heightheader:38px;
+    --heightrow:42px;
+    --marginleftcolumn:40px;
+    --marginleftfirstcolumn:15px;
+}
