@@ -45,6 +45,6 @@ document.addEventListener('DOMContentLoaded',function(){
             { hello: 6, world: 'hello world end' },
         ];
     }, false)
+    document.body.appendChild(element);
 })
 
-document.body.appendChild(element);
