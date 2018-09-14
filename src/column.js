@@ -12,7 +12,7 @@ export class Column extends Node{
     }
     render(){
         let node = super.render();
-        textContent(node,this.text);
+        textContent(node,this.text||'');
         if(this.width){
             setWidth(node,this.width);
         }

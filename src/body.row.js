@@ -10,7 +10,7 @@ export class BodyRow extends Row
     render(){
         let columns = this.columns;
         this.nodes = columns.map((c,index)=>{
-            let text = this.rowData[c.attribute] || '';
+            let text = this.rowData[c.attribute];
             return new ColumnBody(c,index,text);
         })
         return super.render();
