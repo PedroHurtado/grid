@@ -11,7 +11,8 @@ export class BodyRow extends Row
         let columns = this.columns;
         this.nodes = columns.map((c,index)=>{
             let text = this.rowData[c.attribute];
-            return new ColumnBody(c,index,text);
+            let newColumn = Object.assign({},c,{text:text});
+            return new ColumnBody(newColumn,index);
         })
         return super.render();
     }

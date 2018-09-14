@@ -14,7 +14,7 @@ export const MetaData = {
     columns:[
         {
             text:'Hello',
-            classList:['grid__column','grid__column--20'],
+            classList:['grid__column','grid__column--100'],
             attribute:'hello',
             converter:{
                 type:'dateConverter',
@@ -35,7 +35,7 @@ export const MetaData = {
                 params:[]
             },
             width:300,
-            sortable:false,
+            sortable:true,
             decorators:[],
             visible:true
         }

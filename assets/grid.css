@@ -29,13 +29,24 @@
   background-color: var(--backbgroundrowhover);
 }
 .grid__column{
-    margin-left: var(--marginleftcolumn);
+  display: flex;
+  align-items: center;
+  margin-left: var(--marginleftcolumn);
 }
 .grid__column--first{
     margin-left: var(--marginleftfirstcolumn);
 }
 .grid__column--bold{
   font-weight: bold;
+}
+.grid__column--left{
+  justify-content: flex-start;
+}
+.grid__column--right{
+  justify-content: flex-end;
+}
+.grid__column--center{
+  justify-content: center;
 }
 .grid__column--5 {
     width: 5px;
@@ -116,12 +127,4 @@
   .grid__column--100 {
     width: 100px;
   }
-  .grid__column--left{
-    text-align: left;
-  }
-  .grid__column--right{
-    text-align: right;
-  }
-  .grid__column--center{
-    text-align: center;
-  }
+ 

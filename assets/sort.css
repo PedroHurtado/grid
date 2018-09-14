@@ -1,0 +1,33 @@
+.grid__column__sort{
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+}
+.grid__column__sort__column{
+    height: 12px;
+    width: 12px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.grid__column__sort__column:hover{
+    background-color: #d6dee3;
+    border-radius: 4px;
+}
+.grid__column__sort__column__i{
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+}
+.grid__column__sort__column__i--up {
+	border-top: 4px solid black;
+}
+
+.grid__column__sort__column__i--down {
+	border-bottom: 4px solid black;
+}
+
+
+
