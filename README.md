@@ -1,6 +1,8 @@
-##Grid
+# Grid
 
-npm install -g http-server
+## install
+`npm install -g http-server'
 
-http-server
+## Build
 
+Run `http-server` to build the project. 
