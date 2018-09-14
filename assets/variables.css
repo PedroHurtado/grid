@@ -8,3 +8,7 @@
     --marginleftcolumn:40px;
     --marginleftfirstcolumn:15px;
 }
+
+:root{
+    --borderrowbody: 1px solid #eaf0f4;
+}

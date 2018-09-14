@@ -23,6 +23,7 @@
 .grid__row__body{
     height: var(--heightrow);
     background-color: var(--backbgroundrow);
+    border-bottom: var(--borderrowbody);
 }
 .grid__column{
     margin-left: var(--marginleftcolumn);
