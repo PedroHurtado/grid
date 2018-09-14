@@ -9,8 +9,12 @@ export function classList(node,classList){
 }
 export function appendChilds(node,nodes){
     (nodes||[]).forEach(n=>{
-        let newNode = n.render();
-        node.appendChild(newNode);
+        if(Array.isArray(n)){
+            appendChilds(node,n);
+        }else
+        {
+            node.appendChild(n.render());
+        }
     });
 }
 export function setWidth(node,width){

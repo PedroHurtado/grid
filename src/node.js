@@ -9,6 +9,7 @@ export class Node{
             this.classList = [];
         }
         this.nodes = [];
+        this.options = options;
     }
     render(){
         let node = createElement(this.nodeType);

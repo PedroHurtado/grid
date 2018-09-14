@@ -1,4 +1,5 @@
 import {Column} from './column.js';
+import {Node} from './node.js'
 
 export class ColumnHeader extends Column
 {

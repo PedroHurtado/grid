@@ -35,7 +35,7 @@ export const MetaData = {
                 params:[]
             },
             width:300,
-            sortable:true,
+            sortable:false,
             decorators:[],
             visible:true
         }
