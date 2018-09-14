@@ -10,15 +10,26 @@ export class Node{
         }
         this.nodes = nodes;
         this.options = options;
+        this.changes = false;
     }
     render(){
-        let node = createElement(this.nodeType);
-        if(this.options.text!==undefined){
-            textContent(node,this.options.text);
+        if(this.__node){
+            if(this.changes){
+                let parent = this.__node.parentElement;
+                this.__node.remove();
+                this.__node = createElement(this.nodeType);
+                parent.appendChild(this.__node)
+            }
+            
+        }else{
+            this.__node = createElement(this.nodeType);
         }
-        classList(node,this.classList);
-        appendChilds(node,this.nodes);
-        node.__pelikan = this;
-        return node;
+        if(this.options.text!==undefined){
+            textContent(this.__node,this.options.text);
+        }
+        classList(this.__node,this.classList);
+        appendChilds(this.__node,this.nodes);
+        this.__node.__pelikan = this;
+        return this.__node;
     }
 }
