@@ -8,8 +8,7 @@ export class BodyRow extends Row
         this.rowData = rowData || {};
     }
     render(){
-        let columns = this.columns;
-        this.nodes = columns.map((c,index)=>{
+        this.nodes = this.options.columns.map((c,index)=>{
             let text = this.rowData[c.attribute];
             let newColumn = Object.assign({},c,{text:text});
             return new ColumnBody(newColumn,index);

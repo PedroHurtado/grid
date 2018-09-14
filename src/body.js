@@ -3,10 +3,8 @@ import {BodyRow} from './body.row.js'
 export class Body extends Node{
     constructor(options,columns){
         super(options);
-        this.columns = columns;
-        this.options = options;
         this._data = [];
-        
+        this.columns = columns;
     }
     set data(value){
         this._data =  value || [];
