@@ -9,6 +9,7 @@ export class Node{
         let node = createElement(this.nodeType);
         classList(node,this.classList);
         appendChilds(node,this.nodes);
+        node.__pelikan = this;
         return node;
     }
 }
