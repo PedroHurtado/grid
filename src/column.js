@@ -2,8 +2,7 @@ import {Node} from './node.js'
 import {textContent,setWidth} from './domutil.js'
 export class Column extends Node{
     constructor(options,index){
-        super('span');
-        this.classList = options.classList || [];
+        super(options,'span');
         if (index===0){
             this.classList.push('grid__column--first')
         }

@@ -2,10 +2,9 @@ import {Node} from './node.js';
 import {BodyRow} from './body.row.js'
 export class Body extends Node{
     constructor(options,columns){
-        super('div');
+        super(options);
         this.columns = columns;
         this.options = options;
-        this.classList=options.classList;
         this._data = [];
         
     }

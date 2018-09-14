@@ -1,8 +1,13 @@
 import {createElement,classList,appendChilds}  from './domutil.js'
 export class Node{
-    constructor(nodeType='div'){
+    constructor(options,nodeType='div'){
         this.nodeType = nodeType;
-        this.classList = [];
+        if(options.classList && Array.isArray(options.classList)){
+            this.classList=options.classList.map(c=>c);
+        }
+        else{
+            this.classList = [];
+        }
         this.nodes = [];
     }
     render(){
