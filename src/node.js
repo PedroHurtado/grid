@@ -18,7 +18,7 @@ export class Node{
                 let parent = this.__node.parentElement;
                 this.__node.remove();
                 this.__node = createElement(this.nodeType);
-                parent.appendChild(this.__node)
+                parent.appendChild(this.__node);
             }
             
         }else{
