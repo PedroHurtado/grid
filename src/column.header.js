@@ -14,19 +14,23 @@ export class ColumnHeader extends Column {
     createSort() {
         let down = new Node({ classList: ['grid__column__sort__column'] }, 'p',
             new Node({
-                classList: ['grid__column__sort__column__i',
-                    'grid__column__sort__column__i--down']
+                classList: [
+                    'grid__column__sort__column__i',
+                    'grid__column__sort__column__i--down'
+                ]
             }, 'i')
         );
 
         let up = new Node({ classList: ['grid__column__sort__column'] }, 'p',
             new Node({
-                classList: ['grid__column__sort__column__i',
-                    'grid__column__sort__column__i--up']
+                classList: [
+                    'grid__column__sort__column__i',
+                    'grid__column__sort__column__i--up'
+                ]
             }, 'i')
         );
-        
-        let sort = new Node({ classList: ['grid__column__sort'] }, 'div',up,down);
+
+        let sort = new Node({ classList: ['grid__column__sort'] }, 'div', up, down);
         return sort;
     }
 }

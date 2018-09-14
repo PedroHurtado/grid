@@ -13,7 +13,7 @@
 }
 .grid__column__sort__column:hover{
     background-color: #d6dee3;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 .grid__column__sort__column__i{
     width: 0;
@@ -22,11 +22,11 @@
     border-right: 3px solid transparent;
 }
 .grid__column__sort__column__i--up {
-	border-top: 4px solid black;
+	border-top: 3px solid black;
 }
 
 .grid__column__sort__column__i--down {
-	border-bottom: 4px solid black;
+	border-bottom: 3px solid black;
 }
 
 
