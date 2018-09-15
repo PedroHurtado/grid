@@ -21,13 +21,19 @@
     border-left: 3px solid transparent;
     border-right: 3px solid transparent;
 }
-.grid__column__sort__column__i--up {
+.grid__column__sort__column__i--down {
 	border-top: 3px solid black;
 }
 
-.grid__column__sort__column__i--down {
+.grid__column__sort__column__i--downselected {
+	border-top: 3px solid blue;
+}
+.grid__column__sort__column__i--up {
 	border-bottom: 3px solid black;
 }
 
+.grid__column__sort__column__i--upselected {
+	border-bottom: 3px solid blue
+}
 
 

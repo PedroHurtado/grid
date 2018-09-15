@@ -9,7 +9,6 @@ export class Body extends Node{
     set data(value){
         this._data =  value || [];
         this.changes = true;
-        this.render();
     }    
     render(){
         this.nodes = this._data.map(row=>{

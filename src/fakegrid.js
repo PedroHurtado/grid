@@ -21,6 +21,7 @@ export const MetaData = {
                 params:[]
             },
             sortable:true,
+            sort:'desc',
             decorators:[],
             visible:true
         },

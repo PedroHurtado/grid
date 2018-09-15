@@ -4,7 +4,9 @@ import {
     appendChilds,
     createTextContent,
     updateElement,
-    removeNode
+    removeNode,
+    createEvent,
+    removeEvent
 } from './domutil.js'
 export class Node {
     constructor(options, nodeType = 'div', ...nodes) {
@@ -17,14 +19,15 @@ export class Node {
         }
         this.nodes = nodes;
         this.options = options;
-        this.changes = false;
+        this._changes = false;
     }
     render() {
         if (this.__node) {
-            if (this.changes) {
+            if (this._changes) {
                 let newNode = createElement(this.nodeType);
                 this.decorateNode(newNode);
                 updateElement(this.__node, newNode);
+                this.removeEvent(this.options.events,this.__node);
                 removeNode(this.__node);
                 this.__node = newNode;
                 this.changes = false;
@@ -36,7 +39,15 @@ export class Node {
         }
         return this.__node;
     }
-
+    set changes(value){
+        if(value){
+            this._changes= true;
+            this.render();
+        }
+        else{
+            this._changes = false;
+        }
+    }
 
     decorateNode(node) {
         if (this.options.text !== undefined) {
@@ -44,6 +55,27 @@ export class Node {
         }
         classList(node, this.classList);
         appendChilds(node, this.nodes);
+        this.createEvents(this.options.events,node);
         node.__pelikan = this;
+    }
+    createEvents(events,node){
+        if(events){
+            Object.keys(events).forEach(key=>{
+                let handler = events[key];
+                if(typeof handler === 'function'){
+                    createEvent(node,key,handler);
+                }
+            });
+        }
+    }
+    removeEvent(events,node){
+        if(events){
+            Object.keys(events).forEach(key=>{
+                let handler = events[key];
+                if(typeof handler === 'function'){
+                    removeEvent(node,key,handler);
+                }
+            });
+        }
     }
 }

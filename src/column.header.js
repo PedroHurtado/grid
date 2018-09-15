@@ -7,25 +7,80 @@ export class ColumnHeader extends Column {
         if (options.classListHeader) {
             this.classList = this.classList.concat(options.classListHeader);
         }
+        this.sort = this.options.sort;
+        this.checkSort();
         if (this.options.sortable) {
-            this.nodes.push(this.createSort())
+            this.sortNode = this.createSort();
+            this.nodes.push(this.sortNode)
+        }
+    }
+    checkSort() {
+        this.classDown = 'grid__column__sort__column__i--down';
+        this.classUp = 'grid__column__sort__column__i--up';
+
+        if (this.sort) {
+            if (this.sort === 'asc') {
+                this.classUp = 'grid__column__sort__column__i--upselected';
+            }
+            else {
+                this.classDown = 'grid__column__sort__column__i--downselected';
+            }
+        }
+    }
+    sortAsc(ev) {
+        ev.stopPropagation();
+        if (this.sort === 'asc') {
+            this.sort = undefined;
+        } else {
+            this.sort = 'asc'
+        }
+        this.checkSort();
+        this.changeSortNode();
+    }
+    sorDesc(ev) {
+        ev.stopPropagation();
+        if (this.sort === 'desc') {
+            this.sort = undefined;
+        } else {
+            this.sort = 'desc'
+        }
+        this.checkSort();
+        this.changeSortNode();
+    }
+    changeSortNode() {
+        let index = this.nodes.indexOf(this.sortNode);
+        if (index > -1) {
+            this.nodes.splice(index, 1)
+            this.sortNode = this.createSort();
+            this.nodes.push(this.sortNode);
+            this.changes=true;
         }
     }
     createSort() {
-        let down = new Node({ classList: ['grid__column__sort__column'] }, 'p',
+        let down = new Node({
+            classList: ['grid__column__sort__column'],
+            events: {
+                click: this.sorDesc.bind(this)
+            }
+        }, 'p',
             new Node({
                 classList: [
                     'grid__column__sort__column__i',
-                    'grid__column__sort__column__i--down'
+                    this.classDown
                 ]
             }, 'i')
         );
 
-        let up = new Node({ classList: ['grid__column__sort__column'] }, 'p',
+        let up = new Node({
+            classList: ['grid__column__sort__column'],
+            events: {
+                click: this.sortAsc.bind(this)
+            }
+        }, 'p',
             new Node({
                 classList: [
                     'grid__column__sort__column__i',
-                    'grid__column__sort__column__i--up'
+                    this.classUp
                 ]
             }, 'i')
         );

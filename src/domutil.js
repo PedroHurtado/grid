@@ -26,8 +26,23 @@ export function createTextContent(domNode, text) {
 
 export function updateElement(oldNode, newNode) {
     let parent = oldNode.parentNode;
-    parent.insertBefore(newNode, oldNode.nexSibiling);
+    let nextSibling =oldNode.nextSibling;
+    let previousSibling = oldNode.previousSibling;
+    if(nextSibling){
+        parent.insertBefore(newNode, nextSibling);
+    }else if(previousSibling){
+        parent.insertBefore(newNode, previousSibling.nextSibling);
+    }
+    else{
+        parent.appendChild(newNode);
+    }
 }
 export function removeNode(node) {
     node && node.remove();
+}
+export function createEvent(node,event,handler){
+    node.addEventListener(event,handler,false);
+}
+export function removeEvent(node,event,handler){
+    node.removeEventListener(event,handler,false);
 }
