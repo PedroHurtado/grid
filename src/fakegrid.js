@@ -1,14 +1,28 @@
 export const MetaData = {
     classList:['grid'],
     header: {
-        classList:['grid__header','grid__row'],
+        classList:['grid__header'],
         actions:[],
+        row:{
+            classList:['grid__header__row'],
+        }
     },
     body:{
         classList:['grid__body'],
         actions:[],
+        rows:{
+            row:{
+                classList:['grid__body__row'],  
+            },
+            rowColumns:{
+                classList:['grid__body__row__columns'],  
+            },
+            rowSubGrid:{
+                classList:['grid__body__row__columns'],  
+            }
+        },
         row:{
-            classList:['grid__row','grid__row__body'],
+            classList:['grid__body__row'],
         }
     },
     columns:[

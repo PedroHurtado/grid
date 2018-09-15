@@ -1,12 +1,13 @@
-import {Row} from './row.js'
-import {ColumnHeader} from './column.header.js'
+import {HeaderRow} from './header.row.js'
 import {Node} from './node.js';
-export class Header extends Row
+export class Header extends Node
 {
     constructor(options,columns){
-        super(options,columns);
-        this.nodes = this.options.columns.map((c,index)=>{
-            return new ColumnHeader(c,index);
-        });
+        super(options);
+        this.columns = columns;     
+    }
+    render(){
+        this.nodes.push(new HeaderRow(this.options.row,this.columns));
+        return super.render();
     }
 }
