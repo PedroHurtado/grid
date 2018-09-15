@@ -1,4 +1,11 @@
-import { createElement, classList, appendChilds, createTextContent,updateElement } from './domutil.js'
+import {
+    createElement,
+    classList,
+    appendChilds,
+    createTextContent,
+    updateElement,
+    removeNode
+} from './domutil.js'
 export class Node {
     constructor(options, nodeType = 'div', ...nodes) {
         this.nodeType = nodeType;
@@ -17,11 +24,11 @@ export class Node {
             if (this.changes) {
                 let newNode = createElement(this.nodeType);
                 this.decorateNode(newNode);
-                newNode = updateElement(this.__node,newNode);
-                this.__node.remove();
+                updateElement(this.__node, newNode);
+                removeNode(this.__node);
                 this.__node = newNode;
                 this.changes = false;
-                
+
             }
         } else {
             this.__node = createElement(this.nodeType);
@@ -30,7 +37,7 @@ export class Node {
         return this.__node;
     }
 
-   
+
     decorateNode(node) {
         if (this.options.text !== undefined) {
             createTextContent(node, this.options.text);

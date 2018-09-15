@@ -24,7 +24,10 @@ export function createTextContent(domNode, text) {
     domNode.appendChild(domNodeText);
 }
 
-export function updateElement(oldNode,newNode) {
+export function updateElement(oldNode, newNode) {
     let parent = oldNode.parentNode;
-    return parent.insertBefore(newNode, oldNode.nexSibiling); 
+    parent.insertBefore(newNode, oldNode.nexSibiling);
+}
+export function removeNode(node) {
+    node && node.remove();
 }
