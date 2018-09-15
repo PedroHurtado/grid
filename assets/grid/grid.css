@@ -1,0 +1,52 @@
+@import 'grid.sort.css';
+@import 'grid.column.width.css';
+
+.grid{
+  font-family: Lato;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal
+}
+.grid__row{
+    display: flex;
+    color: var(--colortext);
+}
+.grid__header{
+    min-height: var(--heightheader);
+    background-color: var(--backgroundheader);
+}
+.grid__body{
+    display: flex;
+    flex-direction: column;
+}
+.grid__row__body{
+    min-height: var(--heightrow);
+    background-color: var(--backbgroundrow);
+    border-bottom: var(--borderrowbody);
+}
+.grid__row__body:hover{
+  background-color: var(--backbgroundrowhover);
+}
+.grid__column{
+  display: flex;
+  align-items: center;
+  margin-left: var(--marginleftcolumn);
+}
+.grid__column--first{
+    margin-left: var(--marginleftfirstcolumn);
+}
+.grid__column--bold{
+  font-weight: bold;
+}
+.grid__column--left{
+  justify-content: flex-start;
+}
+.grid__column--right{
+  justify-content: flex-end;
+}
+.grid__column--center{
+  justify-content: center;
+}

@@ -8,7 +8,7 @@ export const MetaData = {
         classList:['grid__body'],
         actions:[],
         row:{
-            classList:['grid__row','grid__row__body']
+            classList:['grid__row','grid__row__body'],
         }
     },
     columns:[
@@ -23,7 +23,7 @@ export const MetaData = {
             sortable:true,
             sort:'desc',
             decorators:[],
-            visible:true
+            visible:true,
         },
         {
             text:'World',
@@ -36,9 +36,10 @@ export const MetaData = {
                 params:[]
             },
             width:300,
+            sort:'asc',
             sortable:true,
             decorators:[],
-            visible:true
+            visible:true,
         }
     ]
 }

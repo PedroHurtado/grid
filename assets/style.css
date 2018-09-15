@@ -1,3 +1,2 @@
 @import 'variables.css';
-@import 'grid.css';
-@import 'sort.css';
+@import './grid/grid.css';
