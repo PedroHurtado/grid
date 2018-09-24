@@ -7,21 +7,28 @@ export class ColumnBodyInfo extends ColumnBody {
         options.text = '';
         super(options, index);
         this.open = false;
-        this.nodes =[this.createNodes()];
-        this.options.events = {
-            click: this.openHandler.bind(this)
-        }
+        this.nodes = [this.createNodes()];
         this.subGrid = null;
     }
     createNodes() {
         if (!this.open) {
-            return new Node({ classList: ['grid__column--info'] }, 'div',
+            return new Node({
+                classList: ['grid__column--info'], 
+                events: {
+                    click: this.openHandler.bind(this)
+                }
+            }, 'div',
                 new Node({ classList: ['grid__column--info-horizontal'] }, 'i'),
                 new Node({ classList: ['grid__column--info-vertical'] }, 'i')
             );
         }
         else {
-            return new Node({ classList: ['grid__column--info','grid__column--info-open'] }, 'div',
+            return new Node({
+                classList: ['grid__column--info', 'grid__column--info-open'],
+                events: {
+                    click: this.openHandler.bind(this)
+                }
+            }, 'div',
                 new Node({ classList: ['grid__column--info-horizontal'] }, 'i'),
             );
         }
@@ -39,25 +46,25 @@ export class ColumnBodyInfo extends ColumnBody {
             }
         }
         this.nodes = [this.createNodes()];
-        this.changes=true;
+        this.changes = true;
     }
-    
+
     createSubGrid() {
-        let parent = this.__node.parentNode.parentNode;  
+        let parent = this.__node.parentNode.parentNode;
         let subGrid = new Grid(this.options.grid);
         let rect = this.nodes[0].__node.getBoundingClientRect();
         let element = subGrid.render();
         subGrid.data = this.options.data;
-        this.setMarginLeftFirstColumn(element,rect);
+        this.setMarginLeftFirstColumn(element, rect);
         parent.appendChild(element);
         this.subGrid = element;
     }
-    setMarginLeftFirstColumn(element,rect){
-       let firstColumns =  [...element.querySelectorAll('.grid__column--first')];
-       firstColumns.forEach(col=>{
-            col.style.marginLeft=`${rect.left - (rect.width/2)}px`;
-       });
+    setMarginLeftFirstColumn(element, rect) {
+        let firstColumns = [...element.querySelectorAll('.grid__column--first')];
+        firstColumns.forEach(col => {
+            col.style.marginLeft = `${rect.left - (rect.width / 2)}px`;
+        });
     }
-    
+
 
 }
