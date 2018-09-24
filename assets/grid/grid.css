@@ -71,3 +71,17 @@ grid-column
   .grid__column--center{
     justify-content: center;
   }
+  .grid__column--info{
+    width: 14px;
+    height: 14px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: solid 0.8px #bfd4e0;
+    cursor:pointer;
+  
+  }
+  .grid__column--info-open{
+    background-color: #bfd4e0;
+  }
