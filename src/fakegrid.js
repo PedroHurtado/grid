@@ -39,7 +39,6 @@ export const MetaData = {
         {
             text: 'info.',
             classList: ['grid__column', 'grid__column--100', 'grid__column--center'],
-            classListBody: ['grid__column--bold'],
             attribute: 'subgrid',
             visible: true,
             grid: {

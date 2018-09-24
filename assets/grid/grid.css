@@ -84,23 +84,22 @@ grid-column
   
   }
   .grid__column--info-horizontal{
-    width: 0.8px;
-    height: 6px;
-    transform: rotate(-270deg);
+    width: 6px;
+    height: 2px;
     background-color: #354052;
     position: absolute;
-    left: 7px;
-    top: 3.5px;
+    left: 4px;
+    top:6px;
+   
   
   }
   .grid__column--info-vertical{
-    width: 0.8px;
+    width: 2px;
     height: 6px;
-    transform: rotate(-360deg);
     background-color: #354052;
     position: absolute;
-    left: 7px;
-    top: 3.5px;
+    left: 6px;
+    top: 4px;
   
   }
 

@@ -11,31 +11,31 @@ export class ColumnBodyInfo extends ColumnBody {
         this.subGrid = null;
     }
     createNodes() {
+        let events = {
+            click: this.openHandler.bind(this)
+        };
         if (!this.open) {
             return new Node({
                 classList: ['grid__column--info'], 
-                events: {
-                    click: this.openHandler.bind(this)
-                }
+                events: events
             }, 'div',
-                new Node({ classList: ['grid__column--info-horizontal'] }, 'i'),
-                new Node({ classList: ['grid__column--info-vertical'] }, 'i')
+                new Node({ classList: ['grid__column--info-horizontal'] }, 'div'),
+                new Node({ classList: ['grid__column--info-vertical'] }, 'div')
             );
         }
         else {
             return new Node({
                 classList: ['grid__column--info', 'grid__column--info-open'],
-                events: {
-                    click: this.openHandler.bind(this)
-                }
+                events:events
             }, 'div',
-                new Node({ classList: ['grid__column--info-horizontal'] }, 'i'),
+                new Node({ classList: ['grid__column--info-horizontal'] }, 'div'),
             );
         }
 
     }
     openHandler(ev) {
         ev.stopPropagation();
+        ev.preventDefault();
         this.open = !this.open;
         if (this.open) {
             this.createSubGrid();
