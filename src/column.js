@@ -11,7 +11,11 @@ export class Column extends Node{
         this.options.text = '';
     }
     createSpan(){
-        let span = new Node({text:this.options.text || ''},'span');
+        let text = this.options.text;
+        if(text===undefined || text === null){
+            text = '';
+        }
+        let span = new Node({text:text},'span');
         return span;
     }
     render(){

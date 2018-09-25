@@ -1,6 +1,7 @@
 import { Row } from './row.js';
 import { ColumnBody } from './column.body.js';
 import {ColumnBodyInfo} from './column.body.info.js';
+import {ColumnBodyBoolen} from './column.body.boolean.js';
 import { Node } from './node.js';
 
 export class BodyRow extends Row {
@@ -9,15 +10,17 @@ export class BodyRow extends Row {
         this.rowData = rowData || {};
     }
     render() {
-
         let columns = this.options.columns.map((c, index) => {
+            let text = this.rowData[c.attribute];
             if (c.grid){
-                let data = this.rowData[c.attribute] || [];
+                let data = text || [];
                 let newColumn = Object.assign({}, c, { data: data });
                 return new ColumnBodyInfo(newColumn,index);
+            }else if(c.type==='Boolean'){
+                let newColumn = Object.assign({}, c, { text: text });
+                return new ColumnBodyBoolen(newColumn,index);
             }
             else {
-                let text = this.rowData[c.attribute];
                 let newColumn = Object.assign({}, c, { text: text });
                 return new ColumnBody(newColumn, index);
             }

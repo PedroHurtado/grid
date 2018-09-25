@@ -7,6 +7,15 @@ export function classList(domNode, classList) {
     });
 
 }
+export function setAttributes(domNode,attributes){
+    Object.entries(attributes || {}).forEach(attr=>{
+        if(typeof attr[1] === 'boolean'){
+            domNode.setAttribute(attr[0]);
+        }else{
+            domNode.setAttribute(attr[0],attr[1]);
+        } 
+    });
+}
 export function appendChilds(domNode, domNodes) {
     (domNodes || []).forEach(n => {
         if (Array.isArray(n)) {

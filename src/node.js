@@ -1,6 +1,7 @@
 import {
     createElement,
     classList,
+    setAttributes,
     appendChilds,
     createTextContent,
     updateElement,
@@ -54,6 +55,7 @@ export class Node {
             createTextContent(node, this.options.text);
         }
         classList(node, this.classList);
+        setAttributes(node,this.options.attributes);
         appendChilds(node, this.nodes);
         this.createEvents(this.options.events,node);
         node.__pelikan = this;

@@ -7,7 +7,7 @@ let element = grid.render();
 document.addEventListener('DOMContentLoaded',function(){
     //element.addEventListener('click', function () {
         grid.data = [
-            { hello: 1, world: 'hello world',subgrid:[
+            { hello: 1, world: 'hello world',bool:true,subgrid:[
                 {hello:1},
                 {hello:2},
                 {hello:3},

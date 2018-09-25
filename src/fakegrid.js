@@ -96,6 +96,21 @@ export const MetaData = {
             sortable: true,
             decorators: [],
             visible: true,
+        },
+        {
+            text: 'Boolean',
+            type:'Boolean',
+            classList: ['grid__column', 'grid__column--100','grid__column--center'],
+            classListBody: ['grid__column__boolean'],
+            attribute: 'bool',
+            converter: {
+                type: 'dateConverter',
+                params: []
+            },
+            sortable: true,
+            sort: 'desc',
+            decorators: [],
+            visible: true,
         }
     ]
 }
