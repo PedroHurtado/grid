@@ -1,5 +1,14 @@
 export const MetaData = {
     classList: ['grid'],
+    selectable:{
+        classList:  ['grid__column', 'grid__column--30', 'grid__column--center'],
+        selected:{
+            classList:['grid__column__selectable','grid__column__selectable--selected'],
+        },
+        unselected:{
+            classList:['grid__column__selectable'],
+        },
+    },
     header: {
         classList: ['grid__header'],
         actions: [],

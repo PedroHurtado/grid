@@ -3,6 +3,7 @@ import { ColumnBody } from './column.body.js';
 import {ColumnBodyInfo} from './column.body.info.js';
 import {ColumnBodyBoolen} from './column.body.boolean.js';
 import { Node } from './node.js';
+import { ColumnSelectable } from './column.selectable.js';
 
 export class BodyRow extends Row {
     constructor(options, columns, rowData) {
@@ -12,7 +13,11 @@ export class BodyRow extends Row {
     render() {
         let columns = this.options.columns.map((c, index) => {
             let text = this.rowData[c.attribute];
-            if (c.grid){
+            if(c.selectable){
+                let newColumn = Object.assign({},c);
+                return new ColumnSelectable(newColumn,index)
+            }
+            else if (c.grid){
                 let data = text || [];
                 let newColumn = Object.assign({}, c, { data: data });
                 return new ColumnBodyInfo(newColumn,index);

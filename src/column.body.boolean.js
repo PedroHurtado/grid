@@ -21,7 +21,7 @@ export class ColumnBodyBoolen extends ColumnBody {
             return new Node(
                 { classList: classList }, 'div',
                 new Node({
-                    classList: ['grid__column__boolean__img']
+                    classList: ['grid__column__boolean__check']
                 },'div')
             );
         } else {
