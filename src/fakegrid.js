@@ -36,10 +36,6 @@ export const MetaData = {
             text: 'Hello',
             classList: ['grid__column', 'grid__column--100'],
             attribute: 'hello',
-            converter: {
-                type: 'dateConverter',
-                params: []
-            },
             sortable: true,
             sort: 'desc',
             decorators: [],
@@ -80,10 +76,6 @@ export const MetaData = {
                         text: 'Hello',
                         classList: ['grid__column', 'grid__column--100'],
                         attribute: 'hello',
-                        converter: {
-                            type: 'dateConverter',
-                            params: []
-                        },
                         sortable: false,
                         visible: true,
                     }
@@ -96,10 +88,6 @@ export const MetaData = {
             classList: ['grid__column', 'grid__column--100', 'grid__column--right'],
             classListBody: ['grid__column--bold'],
             attribute: 'world',
-            converter: {
-                type: 'dateConverter',
-                params: []
-            },
             width: 300,
             sort: 'asc',
             sortable: true,
@@ -112,12 +100,19 @@ export const MetaData = {
             classList: ['grid__column', 'grid__column--100','grid__column--center'],
             classListBody: ['grid__column__boolean'],
             attribute: 'bool',
-            converter: {
-                type: 'dateConverter',
-                params: []
-            },
             sortable: true,
             sort: 'desc',
+            decorators: [],
+            visible: true,
+        },
+        {
+            text: 'productos',
+            classList: ['grid__column', 'grid__column--100','grid__column--right'],
+            attribute: 'products',
+            converter:{
+                type:'productsConverter',
+                params:['products'],
+            },
             decorators: [],
             visible: true,
         }

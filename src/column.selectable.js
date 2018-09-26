@@ -16,6 +16,7 @@ export class ColumnSelectable extends Column {
         this.nodes=[this.createNodes()];
         this.changes = true;
     }
+
     createNodes() {
         let events={
             click:this.selectedHandler.bind(this),
