@@ -112,6 +112,7 @@ export const MetaData = {
             converter:{
                 type:'productsConverter',
                 params:['products'],
+                classList:['converter'],
             },
             decorators: [],
             visible: true,

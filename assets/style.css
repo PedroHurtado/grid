@@ -1,3 +1,14 @@
 @import 'variables.css';
 @import './grid/grid.css';
 @import './grid/subgrid/subgrid.css';
+
+/*TODO: REMOVE*/
+.converter{
+    width: 30px;
+    height: 21px;
+    border-radius: 3px;
+    background-color: #eaf0f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
