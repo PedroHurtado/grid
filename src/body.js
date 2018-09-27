@@ -12,7 +12,7 @@ export class Body extends Node{
     }    
     render(){
         this.nodes = this._data.map(row=>{
-            return new BodyRow(this.options.row,this.columns,row);             
+            return new BodyRow(this.options.rows,this.columns,row);             
         });
         return super.render();
     }

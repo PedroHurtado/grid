@@ -9,9 +9,10 @@ import { ColumnSelectableBody } from './column.selectable.body.js';
 
 export class BodyRow extends Row {
     constructor(options, columns, rowData) {
-        super(options, columns);
+        super(options.row, columns);
         this.rowData = rowData || {};
         this._flatData = null;
+        this.rowColumns = options.rowColumns;
     }
     get flatData() {
         if (!this._flatData) {
@@ -56,8 +57,13 @@ export class BodyRow extends Row {
             }
 
         });
-        let rowColumns = new Node({ classList: ['grid__body__row__columns'] }, 'div', columns);
-        this.nodes.push(rowColumns);
+        if(this.rowColumns){
+            let rowColumns = new Node(this.rowColumns, 'div', columns);
+            this.nodes.push(rowColumns);
+        }
+        else {
+            this.nodes = columns;
+        }
         return super.render();
     }
 }

@@ -12,14 +12,14 @@ import {
 export class Node {
     constructor(options, nodeType = 'div', ...nodes) {
         this.nodeType = nodeType;
-        if (options.classList && Array.isArray(options.classList)) {
+        if (options && (options.classList && Array.isArray(options.classList))) {
             this.classList = options.classList.map(c => c);
         }
         else {
             this.classList = [];
         }
         this.nodes = nodes;
-        this.options = options;
+        this.options = options || {};
         this._changes = false;
     }
     render() {
