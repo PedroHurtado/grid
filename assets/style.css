@@ -2,6 +2,10 @@
 @import './grid/grid.css';
 @import './grid/subgrid/subgrid.css';
 
+*{
+    margin: 0px;
+    padding: 0px;
+}
 /*TODO: REMOVE*/
 .converter{
     width: 30px;

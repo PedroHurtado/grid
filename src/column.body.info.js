@@ -62,7 +62,7 @@ export class ColumnBodyInfo extends ColumnBody {
     setMarginLeftFirstColumn(element, rect) {
         let firstColumns = [...element.querySelectorAll('.grid__column--first')];
         firstColumns.forEach(col => {
-            col.style.marginLeft = `${rect.left - (rect.width / 2)}px`;
+            col.style.marginLeft = `${rect.left}px`;
         });
     }
 

@@ -55,6 +55,7 @@ grid-column
   display: flex;
   align-items: center;
   margin-left: var(--marginleftcolumn);
+  cursor: context-menu;
 }
   
   .grid__column__selectable{
@@ -124,7 +125,6 @@ grid-column
     justify-content: center;
     align-content: center;
     border: solid 0.8px #bfd4e0;
-    cursor:pointer;
     position: relative;
   
   }

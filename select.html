@@ -11,16 +11,31 @@
 
 <body>
     <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            font-family: Lato;
+            font-size: 1rem;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+    </style>
+    <style>
         .select {
             width: 139px;
             min-height: 30px;
             border-radius: 4px;
             background-color: #ffffff;
             box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.1);
-            font-family: Lato;
-            font-size: 12px;
             color: #3f3f3f;
             display: flex;
+            cursor: context-menu;
+            font-size: 0.75rem;
+
 
         }
 
@@ -53,13 +68,56 @@
 
         }
     </style>
+    <style>
+        .list {
+            width: 200px;
+            min-height: 30px;
+            border-radius: 4px;
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            font-size: 0.75rem;
+        }
+
+        .list__item {
+            min-height: 30px;
+            border-bottom: 1px solid #eaf0f4;
+            display: flex;
+            align-items: center;
+        }
+
+        .list__item:hover {
+            background-color: #eaf0f4;
+        }
+
+        .list__item--end {
+            border-bottom: none;
+        }
+
+        .list__item__content {
+            margin: 0 0 0 4px;
+            cursor: context-menu;
+        }
+    </style>
     <div class="select">
         <div class="select__header">
             <span class="select__header__span">Predeterminado esfdlsdflj asñdlf jsladfjñsdl</span>
             <img class="select__header__img" src="/assets/img/arrow-dropdown.svg">
         </div>
-
     </div>
+    <ul class="list">
+        <li class="list__item"><span class="list__item__content">Lorem ipsum dolor sit.</span></li>
+        <li class="list__item"><span class="list__item__content">Lorem ipsum dolor sit.</span></li>
+        <li class="list__item"><span class="list__item__content">Lorem ipsum dolor sit.</span></li>
+        <li class="list__item"><span class="list__item__content">Lorem ipsum dolor sit.</span></li>
+        <li class="list__item"><span class="list__item__content">Lorem ipsum dolor sit.</span></li>
+        <li class="list__item"><span class="list__item__content">Lorem ipsum dolor sit.</span></li>
+        <li class="list__item list__item--end"><span class="list__item__content">Sequi animi sunt expedita.</span> </li>
+    </ul>
+
 </body>
 
 </html>
