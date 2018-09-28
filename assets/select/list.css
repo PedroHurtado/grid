@@ -9,7 +9,9 @@
     display: flex;
     flex-direction: column;
     font-size: 0.75rem;
+    user-select: none;
 }
+
 
 .list__item {
     min-height: 30px;

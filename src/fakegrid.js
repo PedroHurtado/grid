@@ -64,9 +64,7 @@ export const MetaData = {
                             classList: ['subgrid__body__row__columns'],
                         },
                     },
-                    row: {
-                        classList: ['grid__body__row'],
-                    }
+                  
                 },
                 columns: [
                     {

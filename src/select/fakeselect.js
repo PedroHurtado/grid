@@ -1,6 +1,6 @@
 export const MetaData = {
     classList: ['select'],
-    width:300,
+    width:150,
     selectable:{
         classList:  ['grid__column', 'grid__column--30', 'grid__column--center'],
         selected:{

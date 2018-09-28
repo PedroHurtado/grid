@@ -11,9 +11,11 @@
 .subgrid__header__row{
     min-height: var(--subgridheaderheight);
     background-color: var(--subgridbackgroundheader);
+   
 }
 .subgrid__body__row__columns{
     min-height: var(--subgridbodyheight);
+    display: flex;
 }
 .subgrid__body__row__columns:hover{
     background-color: var(--colorhover);

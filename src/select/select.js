@@ -4,7 +4,7 @@ export class Select extends Node {
     constructor(options, data) {
         super(options);
         this.options.events = {
-            click: this.handerClick.bind(this)
+            click: this.handerClick.bind(this), 
         }
        
         let {columns,selectable} = {
@@ -32,6 +32,7 @@ export class Select extends Node {
         this.changes = true;
 
     }
+  
     handerClick(ev) {
         ev.stopPropagation();
         ev.preventDefault();
@@ -48,9 +49,10 @@ export class Select extends Node {
     showListNode() {
         let rect = this.__node.getBoundingClientRect();
         this.__listNode.style.position = 'absolute';
-        this.__listNode.style.left = `${rect.left}px`;
+        this.__listNode.style.right = `${rect.right-rect.width}px`;
+        //this.__listNode.style.left = `${rect.left}px`;
         this.__listNode.style.top = `${rect.bottom}px`;
-        this.__node.appendChild(this.__listNode);
+        document.body.appendChild(this.__listNode);
     }
     createNodes() {
         return new Node({
