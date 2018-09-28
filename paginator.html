@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+</head>
+
+<body>
+
+    <!--
+         <div class="paginator">
+        <div class="paginator__item paginator__item--first">
+            <img class="paginator__img" src="/assets/img/ic-prev-pag.svg">
+        </div>
+        <div class="paginator__item paginator__item--sibiling">1
+        </div>
+        <div class="paginator__item paginator__item--sibiling">2</div>
+        <div class="paginator__item paginator__item--sibiling paginator__item--selected">3</div>
+        <div class="paginator__item paginator__item--sibiling">...</div>
+        <div class="paginator__item paginator__item--sibiling">99</div>
+        <div class="paginator__item paginator__item--sibiling">
+            <img class="paginator__img" src="/assets/img/ic-next-pag.svg">
+        </div>
+    </div>
+    -->
+
+    <script type="module">
+        import { Paginator } from './src/paginator/paginator.js';
+        let paginator = new Paginator(1150,13);
+        document.body.appendChild(paginator.render());
+    </script>
+</body>
+
+</html>

@@ -57,7 +57,7 @@ grid-column
   display: flex;
   align-items: center;
   margin-left: var(--marginleftcolumn);
-  cursor: context-menu;
+  cursor: default;
 }
   
   .grid__column__selectable{

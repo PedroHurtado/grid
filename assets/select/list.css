@@ -33,5 +33,5 @@
 
 .list__item__content {
     margin: 0 0 0 4px;
-    cursor: context-menu;
+    cursor: default;
 }
