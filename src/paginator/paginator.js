@@ -15,6 +15,9 @@ export class Paginator extends Node {
         this.end = 3;
         this._page = this.start;
         this.actualPage = 0;
+        if (this.total<this.end){
+            this.pages = this.end =  this.total;
+        }
         this.createNodes();
     }
     createNodes() {
