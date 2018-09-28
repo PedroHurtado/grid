@@ -1,13 +1,13 @@
 @import 'grid.sort.css';
 @import 'grid.column.width.css';
 @import 'subgrid.css';
+@import 'grid.scroll.bar.css';
 
 .grid{
   user-select: none;
   display: flex;
   flex-direction: column;
   font-size: 13px;
-  overflow:auto;
   width: 95%;
   margin: auto;
   margin-top: 10px;
