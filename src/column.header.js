@@ -26,6 +26,7 @@ export class ColumnHeader extends Column {
                 this.classDown = 'grid__column__sort__column__i--downselected';
             }
         }
+      
     }
     sortAsc(ev) {
         ev.stopPropagation();
@@ -36,6 +37,7 @@ export class ColumnHeader extends Column {
         }
         this.checkSort();
         this.changeSortNode();
+        this.emit('sort',this.sort);
     }
     sorDesc(ev) {
         ev.stopPropagation();
@@ -46,6 +48,7 @@ export class ColumnHeader extends Column {
         }
         this.checkSort();
         this.changeSortNode();
+        this.emit('sort',this.sort);
     }
     changeSortNode() {
         let index = this.nodes.indexOf(this.sortNode);

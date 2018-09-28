@@ -36,6 +36,10 @@ export class BodyRow extends Row {
             }
         }
     }
+    createNodes(){
+        
+    }
+
     render() {
         let columns = this.options.columns.map((c, index) => {
             let text = this.getData(c.converter, this.rowData, c.attribute);
@@ -59,7 +63,7 @@ export class BodyRow extends Row {
         });
         if(this.rowColumns){
             let rowColumns = new Node(this.rowColumns, 'div', columns);
-            this.nodes.push(rowColumns);
+            this.nodes=[rowColumns];
         }
         else {
             this.nodes = columns;

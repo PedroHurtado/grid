@@ -5,4 +5,8 @@ export class ColumnSelectableBody extends ColumnSelectable{
         super(options,index);
         this.data = data;
     }
+    changeSelection(){
+        super.changeSelection();
+        this.emit('select',this.select);
+    }
 }

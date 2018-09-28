@@ -8,12 +8,12 @@ export class Body extends Node{
     }
     set data(value){
         this._data =  value || [];
+        this.createNodes();
         this.changes = true;
-    }    
-    render(){
+    }   
+    createNodes(){
         this.nodes = this._data.map(row=>{
             return new BodyRow(this.options.rows,this.columns,row);             
         });
-        return super.render();
     }
 }

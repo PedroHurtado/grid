@@ -21,6 +21,10 @@ export class Node {
         this.nodes = nodes;
         this.options = options || {};
         this._changes = false;
+        this.subscriber = null;
+    }
+    emit(eventName,...values){
+        this.subscriber && this.subscriber.emit(eventName,values)
     }
     render() {
         if (this.__node) {
