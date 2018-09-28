@@ -1,5 +1,6 @@
 @import 'grid.sort.css';
 @import 'grid.column.width.css';
+@import 'subgrid.css';
 
 .grid{
   font-family: Lato;
@@ -20,8 +21,6 @@ Header
 */
 .grid__header{
     background-color: var(--backgroundheader);
-    display: flex;
-    flex-direction: column;
     color: var(--colortext);
     min-height: var(--heightheader);
 }
@@ -34,11 +33,8 @@ Header
 Body
 */
 .grid__body{
-    display: flex;
-    flex-direction: column;
     color: var(--colortext);
     overflow-y: scroll;
-    height: 100%;
 }
 
   .grid__body__row{

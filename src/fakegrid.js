@@ -93,7 +93,7 @@ export const MetaData = {
             visible: true,
             grid: {
 
-                classList: ['grid'],
+                classList: ['subgrid'],
                 header: {
                     classList: ['grid__header'],
                     actions: [],
@@ -102,7 +102,7 @@ export const MetaData = {
                     }
                 },
                 body: {
-                    classList: ['grid__body'],
+                    classList: ['subgrid__body'],
                     actions: [],
                     rows: {
                         row: {

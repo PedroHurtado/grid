@@ -1,6 +1,5 @@
 @import 'variables.css';
 @import './grid/grid.css';
-@import './grid/subgrid/subgrid.css';
 @import './select/select.css';
 @import './paginator/paginator.css';
 

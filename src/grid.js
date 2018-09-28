@@ -6,16 +6,20 @@ import { Subscriber } from './subscriber/subscriber.js'
 export class Grid extends Node {
     constructor(options) {
         super(options);
-        let { columns, selectable } = {
+        let { columns, selectable,footer } = {
             columns: options.columns,
-            selectable: options.selectable
+            selectable: options.selectable,
+            footer:options.footer
         }
         if (selectable) {
             columns.unshift(this.createSelectableColumn(selectable))
         }
         this.header = new Header(options.header, columns);
         this.body = new Body(options.body, columns);
-        this.nodes = [this.header, this.body, new Footer()];
+        this.nodes = [this.header, this.body];
+        if(footer){
+            this.nodes.push(new Footer());
+        }
         this.subscriber = new Subscriber('grid');
         this.subscriber.on('sort', () => {
             console.log('sort');
