@@ -10,7 +10,9 @@
   line-height: normal;
   letter-spacing: normal;
   user-select: none;
-  
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /*
@@ -21,6 +23,7 @@ Header
     display: flex;
     flex-direction: column;
     color: var(--colortext);
+    min-height: var(--heightheader);
 }
   .grid__header__row{
     display: flex;
@@ -34,11 +37,14 @@ Body
     display: flex;
     flex-direction: column;
     color: var(--colortext);
+    overflow-y: scroll;
+    height: 100%;
 }
 
   .grid__body__row{
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    min-height: var(--heightrow);
   }
   .grid__body__row__columns{
     display: flex;
@@ -152,4 +158,11 @@ grid-column
 
   .grid__column--info-open{
     background-color: #bfd4e0;
+  }
+
+  .grid__footer{
+    min-height: 56px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
   }

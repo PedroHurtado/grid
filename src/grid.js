@@ -1,6 +1,7 @@
 import { Node } from './node.js'
 import { Header } from './header.js';
 import { Body } from './body.js';
+import { Footer } from './grid.footer.js'
 import { Subscriber } from './subscriber/subscriber.js'
 export class Grid extends Node {
     constructor(options) {
@@ -14,7 +15,7 @@ export class Grid extends Node {
         }
         this.header = new Header(options.header, columns);
         this.body = new Body(options.body, columns);
-        this.nodes = [this.header, this.body];
+        this.nodes = [this.header, this.body, new Footer()];
         this.subscriber = new Subscriber('grid');
         this.subscriber.on('sort', () => {
             console.log('sort');

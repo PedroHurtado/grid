@@ -1,12 +1,12 @@
 export const MetaData = {
     classList: ['grid'],
-    selectable:{
-        classList:  ['grid__column', 'grid__column--30', 'grid__column--center'],
-        selected:{
-            classList:['grid__column__selectable','grid__column__selectable--selected'],
+    selectable: {
+        classList: ['grid__column', 'grid__column--30', 'grid__column--center'],
+        selected: {
+            classList: ['grid__column__selectable', 'grid__column__selectable--selected'],
         },
-        unselected:{
-            classList:['grid__column__selectable'],
+        unselected: {
+            classList: ['grid__column__selectable'],
         },
     },
     header: {
@@ -27,6 +27,54 @@ export const MetaData = {
                 classList: ['grid__body__row__columns'],
             },
         }
+    },
+    footer: {
+        paginator: true,
+        selector: true,
+        records: {
+            classList: ['select'],
+            width: 150,
+            selectable: {
+                classList: ['grid__column', 'grid__column--30', 'grid__column--center'],
+                selected: {
+                    classList: ['grid__column__selectable', 'grid__column__selectable--selected'],
+                },
+                unselected: {
+                    classList: ['grid__column__selectable'],
+                },
+            },
+            list: {
+                classList: ['list'],
+                actions: [],
+                rows: {
+                    row: {
+                        classList: ['list__item'],
+                    },
+                    rowColumns: {
+                        classList: ['list__item__row'],
+                    },
+                }
+            },
+            columns: [
+                {
+                    classList: ['grid__column', 'grid__column--100'],
+                    attribute: 'text',
+                    decorators: [],
+                    visible: true,
+                },
+                {
+                    classList: ['grid__column', 'grid__column--100', 'grid__column--right'],
+                    attribute: 'products',
+                    converter: {
+                        type: 'productsConverter',
+                        params: ['products'],
+                        classList: ['converter'],
+                    },
+                    decorators: [],
+                    visible: true,
+                }
+            ]
+        },
     },
     columns: [
         {
@@ -50,7 +98,7 @@ export const MetaData = {
                     classList: ['grid__header'],
                     actions: [],
                     row: {
-                        classList: ['grid__header__row','subgrid__header__row'],
+                        classList: ['grid__header__row', 'subgrid__header__row'],
                     }
                 },
                 body: {
@@ -64,7 +112,7 @@ export const MetaData = {
                             classList: ['subgrid__body__row__columns'],
                         },
                     },
-                  
+
                 },
                 columns: [
                     {
@@ -91,8 +139,8 @@ export const MetaData = {
         },
         {
             text: 'Boolean',
-            type:'Boolean',
-            classList: ['grid__column', 'grid__column--100','grid__column--center'],
+            type: 'Boolean',
+            classList: ['grid__column', 'grid__column--100', 'grid__column--center'],
             classListBody: ['grid__column__boolean'],
             attribute: 'bool',
             sortable: true,
@@ -102,12 +150,12 @@ export const MetaData = {
         },
         {
             text: 'productos',
-            classList: ['grid__column', 'grid__column--100','grid__column--right'],
+            classList: ['grid__column', 'grid__column--100', 'grid__column--right'],
             attribute: 'products',
-            converter:{
-                type:'productsConverter',
-                params:['products'],
-                classList:['converter'],
+            converter: {
+                type: 'productsConverter',
+                params: ['products'],
+                classList: ['converter'],
             },
             decorators: [],
             visible: true,
