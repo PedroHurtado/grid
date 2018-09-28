@@ -18,16 +18,22 @@ export class Paginator extends Node {
         if (this.total<this.end){
             this.pages = this.end =  this.total;
         }
+        this.group= this.createGroup();
+        
         this.createNodes();
     }
     createNodes() {
         this.nodes.push(this.createPrevious());
-        this.nodes.push(this.createVisiblePages());
+        this.nodes.push(this.group);
         this.nodes.push(this.createPlus());
         this.nodes.push(this.createTotal());
         this.nodes.push(this.createNext());
     }
-    createVisiblePages() {
+    createGroup(){
+        return new Node({classList:['paginator__group']},'div',this.createChildGroup())
+      
+    }
+    createChildGroup() {
         let visiblePages = [];
         let events = {
             click: this.handleSelected.bind(this),
@@ -47,9 +53,8 @@ export class Paginator extends Node {
         this._page = value;
     }
     refresh() {
-        this.nodes = [];
-        this.createNodes();
-        this.changes = true;
+        this.group.nodes = this.createChildGroup();
+        this.group.changes = true;
     }
     handleSelected(ev) {
         stopEvent(ev);

@@ -1,11 +1,11 @@
 .paginator {
     display: flex;
-    min-height: 30px;
     cursor: default;
     user-select: none;
 }
 .paginator__item {
     width: 30px;
+    min-height: 30px;
     border-radius: 2px;
     background-color: #ffffff;
     display: flex;
@@ -14,7 +14,11 @@
     font-size: 11px;
     color: #636c7e;
 }
-
+.paginator__group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .paginator__item--first {
     border: solid 1px #bfd4e0;
 }
