@@ -3,28 +3,30 @@
 @import 'subgrid.css';
 
 .grid{
-  font-family: Lato;
-  font-size: 13px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
   user-select: none;
-  max-height: 100%;
   display: flex;
   flex-direction: column;
+  font-size: 13px;
+  overflow:auto;
+  width: 95%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /*
 Header
 */
 .grid__header{
-    background-color: var(--backgroundheader);
     color: var(--colortext);
     min-height: var(--heightheader);
+    position:sticky;
+    top: 0px;
+    z-index: 999;
+    display: flex;
 }
   .grid__header__row{
+    background-color: var(--backgroundheader);
     display: flex;
     min-height: var(--heightheader);
   }
@@ -34,13 +36,14 @@ Body
 */
 .grid__body{
     color: var(--colortext);
-    overflow-y: scroll;
 }
 
-  .grid__body__row{
+  .grid__body__row__parent{
     display: flex;
     flex-direction: column;
-    min-height: var(--heightrow);
+  }
+  .grid__body__row{
+    display: flex;
   }
   .grid__body__row__columns{
     display: flex;

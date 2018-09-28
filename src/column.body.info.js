@@ -43,6 +43,7 @@ export class ColumnBodyInfo extends ColumnBody {
         } else {
             if (this.subGrid) {
                 this.subGrid.remove();
+                this.subGrid = null;
             }
         }
         this.nodes = [this.createNodes()];
@@ -50,9 +51,9 @@ export class ColumnBodyInfo extends ColumnBody {
     }
 
     createSubGrid() {
-        let parent = this.__node.parentNode.parentNode;
+        let parent = this.__node.parentNode.parentNode.parentNode;
         let subGrid = new Grid(this.options.grid);
-        let rect = this.nodes[0].__node.getBoundingClientRect();
+        let rect = this.__node.getBoundingClientRect();
         let element = subGrid.render();
         subGrid.data = this.options.data;
         this.setMarginLeftFirstColumn(element, rect);

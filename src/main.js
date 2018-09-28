@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { hello: 6, world: 'hello world end' },
     ];
     //}, false)
-
-    document.body.appendChild(element);
+    let main = document.querySelector('.main');
+    main.appendChild(element);
 })
 

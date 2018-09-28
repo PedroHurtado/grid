@@ -10,11 +10,13 @@
 }
 .subgrid__body{
     color: var(--colortext);
+    
+}
+.subgrid_header{
+    background-color: var(--subgridbackgroundheader);
 }
 .subgrid__header__row{
     min-height: var(--subgridheaderheight);
-    background-color: var(--subgridbackgroundheader);
-   
 }
 .subgrid__body__row__columns{
     min-height: var(--subgridbodyheight);

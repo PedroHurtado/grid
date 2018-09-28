@@ -95,7 +95,7 @@ export const MetaData = {
 
                 classList: ['subgrid'],
                 header: {
-                    classList: ['grid__header'],
+                    classList: ['subgrid_header'],
                     actions: [],
                     row: {
                         classList: ['grid__header__row', 'subgrid__header__row'],
@@ -159,6 +159,180 @@ export const MetaData = {
             },
             decorators: [],
             visible: true,
-        }
+        },
+        
+        {
+            text: 'productos',
+            classList: ['grid__column', 'grid__column--100', 'grid__column--right'],
+            attribute: 'products',
+            converter: {
+                type: 'productsConverter',
+                params: ['products'],
+                classList: ['converter'],
+            },
+            decorators: [],
+            visible: true,
+        },
+
+        {
+            text: 'productos',
+            classList: ['grid__column', 'grid__column--100', 'grid__column--right'],
+            attribute: 'products',
+            converter: {
+                type: 'productsConverter',
+                params: ['products'],
+                classList: ['converter'],
+            },
+            decorators: [],
+            visible: true,
+        },
+
+        {
+            text: 'productos',
+            classList: ['grid__column', 'grid__column--100', 'grid__column--right'],
+            attribute: 'products',
+            converter: {
+                type: 'productsConverter',
+                params: ['products'],
+                classList: ['converter'],
+            },
+            decorators: [],
+            visible: true,
+        },
+
+        {
+            text: 'productos',
+            classList: ['grid__column', 'grid__column--100', 'grid__column--right'],
+            attribute: 'products',
+            converter: {
+                type: 'productsConverter',
+                params: ['products'],
+                classList: ['converter'],
+            },
+            decorators: [],
+            visible: true,
+        },
+
+        {
+            text: 'productos',
+            classList: ['grid__column', 'grid__column--100', 'grid__column--right'],
+            attribute: 'products',
+            converter: {
+                type: 'productsConverter',
+                params: ['products'],
+                classList: ['converter'],
+            },
+            decorators: [],
+            visible: true,
+        },
+
+        {
+            text: 'productos',
+            classList: ['grid__column', 'grid__column--100', 'grid__column--right'],
+            attribute: 'products',
+            converter: {
+                type: 'productsConverter',
+                params: ['products'],
+                classList: ['converter'],
+            },
+            decorators: [],
+            visible: true,
+        },
+
+        {
+            text: 'productos',
+            classList: ['grid__column', 'grid__column--100', 'grid__column--right'],
+            attribute: 'products',
+            converter: {
+                type: 'productsConverter',
+                params: ['products'],
+                classList: ['converter'],
+            },
+            decorators: [],
+            visible: true,
+        }, {
+            text: 'productos',
+            classList: ['grid__column', 'grid__column--100', 'grid__column--right'],
+            attribute: 'products',
+            converter: {
+                type: 'productsConverter',
+                params: ['products'],
+                classList: ['converter'],
+            },
+            decorators: [],
+            visible: true,
+        },
+        {
+            text: 'productos',
+            classList: ['grid__column', 'grid__column--100', 'grid__column--right'],
+            attribute: 'products',
+            converter: {
+                type: 'productsConverter',
+                params: ['products'],
+                classList: ['converter'],
+            },
+            decorators: [],
+            visible: true,
+        },
+        {
+            text: 'productos',
+            classList: ['grid__column', 'grid__column--100', 'grid__column--right'],
+            attribute: 'products',
+            converter: {
+                type: 'productsConverter',
+                params: ['products'],
+                classList: ['converter'],
+            },
+            decorators: [],
+            visible: true,
+        },
+        {
+            text: 'productos',
+            classList: ['grid__column', 'grid__column--100', 'grid__column--right'],
+            attribute: 'products',
+            converter: {
+                type: 'productsConverter',
+                params: ['products'],
+                classList: ['converter'],
+            },
+            decorators: [],
+            visible: true,
+        },
+        {
+            text: 'productos',
+            classList: ['grid__column', 'grid__column--100', 'grid__column--right'],
+            attribute: 'products',
+            converter: {
+                type: 'productsConverter',
+                params: ['products'],
+                classList: ['converter'],
+            },
+            decorators: [],
+            visible: true,
+        },
+        {
+            text: 'productos',
+            classList: ['grid__column', 'grid__column--100', 'grid__column--right'],
+            attribute: 'products',
+            converter: {
+                type: 'productsConverter',
+                params: ['products'],
+                classList: ['converter'],
+            },
+            decorators: [],
+            visible: true,
+        },
+        {
+            text: 'productos',
+            classList: ['grid__column', 'grid__column--100', 'grid__column--right'],
+            attribute: 'products',
+            converter: {
+                type: 'productsConverter',
+                params: ['products'],
+                classList: ['converter'],
+            },
+            decorators: [],
+            visible: true,
+        },
     ]
 }

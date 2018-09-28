@@ -16,10 +16,15 @@ export class Grid extends Node {
         }
         this.header = new Header(options.header, columns);
         this.body = new Body(options.body, columns);
+
+        /*let scrollHortizonal = new Node({ classList: ['grid__scroll__horizontal'] },'div')
+        scrollHortizonal.nodes=[this.header, this.body];
+        this.nodes = [scrollHortizonal];*/
         this.nodes = [this.header, this.body];
         if(footer){
             this.nodes.push(new Footer());
         }
+        
         this.subscriber = new Subscriber('grid');
         this.subscriber.on('sort', () => {
             console.log('sort');
