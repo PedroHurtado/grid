@@ -1,7 +1,7 @@
 import { Node } from "../node.js";
 
 function stopEvent(ev) {
-    ev.stopPropagation();
+    
     ev.preventDefault();
 }
 

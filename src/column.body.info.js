@@ -34,7 +34,7 @@ export class ColumnBodyInfo extends ColumnBody {
 
     }
     openHandler(ev) {
-        ev.stopPropagation();
+       
         ev.preventDefault();
         this.open = !this.open;
         if (this.open) {

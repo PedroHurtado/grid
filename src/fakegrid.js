@@ -34,6 +34,12 @@ export const MetaData = {
         records: {
             classList: ['select'],
             width: 150,
+            data:[
+                { text: '15 registros',products:50 },
+                { text: '20 registros' },
+                { text: '25 registros' },
+                { text: '50 registros' },
+            ],
             selectable: {
                 classList: ['grid__column', 'grid__column--30', 'grid__column--center'],
                 selected: {
@@ -45,6 +51,7 @@ export const MetaData = {
             },
             list: {
                 classList: ['list'],
+                closeList:true,
                 actions: [],
                 rows: {
                     row: {

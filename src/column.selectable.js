@@ -8,7 +8,6 @@ export class ColumnSelectable extends Column {
     }
     selectedHandler(ev){
         ev.preventDefault();
-        ev.stopPropagation();
         this.selected = !this.selected;
         this.changeSelection();
     }

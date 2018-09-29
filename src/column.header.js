@@ -29,7 +29,7 @@ export class ColumnHeader extends Column {
       
     }
     sortAsc(ev) {
-        ev.stopPropagation();
+      
         if (this.sort === 'asc') {
             this.sort = undefined;
         } else {
@@ -40,7 +40,7 @@ export class ColumnHeader extends Column {
         this.emit('sort',this.sort);
     }
     sorDesc(ev) {
-        ev.stopPropagation();
+       
         if (this.sort === 'desc') {
             this.sort = undefined;
         } else {

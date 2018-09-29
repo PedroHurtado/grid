@@ -19,11 +19,12 @@ export class Grid extends Node {
 
         let scroll = new Node({classList:['grid__scroll']});
         scroll.nodes=[this.header, this.body];
-        this.nodes.push(scroll);
+       
+        this.nodes.push(scroll);        
         if(footer){
-            this.nodes.push(new Footer());
+            this.nodes.push(new Footer(footer));
         }
-        
+       
         this.subscriber = new Subscriber('grid');
         this.subscriber.on('sort', () => {
             console.log('sort');
