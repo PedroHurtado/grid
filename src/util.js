@@ -3,7 +3,9 @@ function getKey(key, name) {
         return `${key}.${name}`
     }
     else
+    {
         return name;
+    }
 }
 
 export function flatObject(obj, key) {

@@ -63,7 +63,7 @@ export class Select extends Node {
         this.__node.appendChild(this.__listNode);
         let rectList = this.__listNode.getBoundingClientRect();
         let rect = this.__node.getBoundingClientRect();
-        this.calculatePosition(rect, rectList)
+        this.setPosition(rect, rectList)
         this.__listNode.style.zIndex = 9999;
 
     }
@@ -83,11 +83,12 @@ export class Select extends Node {
         div.style.width = '100%';
         div.style.height = '100%';
         div.style.zIndex = 9998;
+        div.style.background = "trasparent";
         div.addEventListener('click',handlerEvent,false);
         this.__node.appendChild(div);
         
     }
-    calculatePosition(rectSelect, rectList) {
+    setPosition(rectSelect, rectList) {
         if (rectSelect.bottom + rectList.height >= window.innerHeight) {
             this.__listNode.style.bottom = `${rectSelect.height+1}px`;
         }
