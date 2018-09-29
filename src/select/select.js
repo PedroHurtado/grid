@@ -1,5 +1,6 @@
-import { Node } from '../node.js'
-import { List } from './list.js'
+import { Node } from '../node.js';
+import { List } from './list.js';
+import {createElement} from '../domutil.js';
 export class Select extends Node {
     constructor(options, data) {
         super(options);
@@ -54,12 +55,7 @@ export class Select extends Node {
         }
     }
     showListNode() {
-        let documentClick = function (ev) {
-            this.toggleOpen();
-            document.removeEventListener('click', documentClick, false)
-        }.bind(this);
-        document.addEventListener('click', documentClick, false);
-
+        this.createBackDrop();
         if (!this.__listNode) {
             this.__listNode = this.list.render();
         }
@@ -70,6 +66,26 @@ export class Select extends Node {
         this.calculatePosition(rect, rectList)
         this.__listNode.style.zIndex = 9999;
 
+    }
+    createBackDrop(){
+        let div = createElement('div');
+        let handlerEvent = function(ev){
+            ev.stopPropagation();
+            ev.preventDefault();
+            div.remove();
+            this.toggleOpen();
+            div.removeEventListener('click',handlerEvent,false);
+        }.bind(this);
+       
+        div.style.position = 'fixed';
+        div.style.top = '0px';
+        div.style.left = '0px';
+        div.style.width = '100%';
+        div.style.height = '100%';
+        div.style.zIndex = 9998;
+        div.addEventListener('click',handlerEvent,false);
+        this.__node.appendChild(div);
+        
     }
     calculatePosition(rectSelect, rectList) {
         if (rectSelect.bottom + rectList.height >= window.innerHeight) {
