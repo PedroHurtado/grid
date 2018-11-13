@@ -20,12 +20,13 @@ export class Grid extends Node {
         let scroll = new Node({classList:['grid__scroll']});
         scroll.nodes=[this.header, this.body];
        
-        this.nodes.push(scroll);        
         if(footer){
             this.nodes.push(new Footer(footer));
         }
+        this.nodes.push(scroll);        
        
-        this.subscriber = new Subscriber('grid');
+       
+        this._subscriber = new Subscriber('grid');
         this.subscriber.on('sort', () => {
             console.log('sort');
         }).on('select', () => {
@@ -46,7 +47,7 @@ export class Grid extends Node {
     }
     set data(value) {
         this.body.data = value;
-        this.setChildSubscriptor();
+       // this.setChildSubscriptor();
     }
     setChildSubscriptor() {
         function* flatNodes(nodes) {

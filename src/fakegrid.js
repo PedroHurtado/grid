@@ -51,7 +51,7 @@ export const MetaData = {
             },
             list: {
                 classList: ['list'],
-                closeList:true,
+                closeList:false,
                 actions: [],
                 rows: {
                     row: {
@@ -89,7 +89,6 @@ export const MetaData = {
             classList: ['grid__column', 'grid__column--100'],
             attribute: 'hello',
             sortable: true,
-            sort: 'desc',
             decorators: [],
             visible: true,
         },

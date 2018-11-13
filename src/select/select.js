@@ -33,6 +33,7 @@ export class Select extends Node {
     }
     set data(value) {
         this._data = value || [];
+        this.__listNode =  null;
         this.changes = true;
 
     }

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //element.addEventListener('click', function () {
     grid.data = [
         {
-            hello: 1, world: 'hello world', products: 4, bool: true, subgrid: [
+            hello: 1, world: 'hello world', products: 100, bool: true, subgrid: [
                 { hello: 1 },
                 { hello: 2 },
                 { hello: 3 },
